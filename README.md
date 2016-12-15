@@ -1,4 +1,4 @@
-# gtk-Listbox
+# gtk Listbox (TreeView)
 
 created with Mono on Linux
 
