@@ -1,0 +1,8 @@
+/home/brian/Dokumente/Mono/ListBox/ListBox/obj/x86/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/home/brian/Dokumente/Mono/ListBox/ListBox/obj/x86/Debug/ListBox.gtk-gui.gui.stetic
+/home/brian/Dokumente/Mono/ListBox/ListBox/obj/x86/Debug/ListBox.ActionAdd.png
+/home/brian/Dokumente/Mono/ListBox/ListBox/bin/Debug/256_myLB.png
+/home/brian/Dokumente/Mono/ListBox/ListBox/bin/Debug/ListBox.exe.mdb
+/home/brian/Dokumente/Mono/ListBox/ListBox/bin/Debug/ListBox.exe
+/home/brian/Dokumente/Mono/ListBox/ListBox/obj/x86/Debug/ListBox.exe
+/home/brian/Dokumente/Mono/ListBox/ListBox/obj/x86/Debug/ListBox.exe.mdb

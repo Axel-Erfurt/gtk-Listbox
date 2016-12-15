@@ -1,0 +1,13 @@
+﻿<Properties StartupItem="ListBox/ListBox.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ListBox/MainWindow.cs">
+    <Files>
+      <File FileName="ListBox/MainWindow.cs" Line="289" Column="36" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <AuthorInfo Name="Axel Schneider" Email="axel99092@t-online.de" Copyright="Axel Schneider" Company="" Trademark="" />
+</Properties>

@@ -1,0 +1,484 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stetic-interface>
+  <configuration>
+    <images-root-path>..</images-root-path>
+    <target-gtk-version>2.12</target-gtk-version>
+  </configuration>
+  <import>
+    <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <widget-library name="../bin/Debug/ListBox.exe" internal="true" />
+  </import>
+  <widget class="Gtk.Window" id="MainWindow" design-size="770 381">
+    <action-group name="Default">
+      <action id="dndAction1">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes" />
+        <property name="StockId">gtk-dnd</property>
+        <property name="Tooltip" translatable="yes">new File</property>
+        <signal name="Activated" handler="NewFile" />
+      </action>
+      <action id="btnOpenFile">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes" />
+        <property name="StockId">gtk-open</property>
+        <property name="Tooltip" translatable="yes">Open CSV File</property>
+        <signal name="Activated" handler="onOpenFile" />
+      </action>
+      <action id="btnSaveAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes" />
+        <property name="StockId">gtk-floppy</property>
+        <property name="Tooltip" translatable="yes">Save CSV</property>
+        <signal name="Activated" handler="OnSaveFile" />
+      </action>
+      <action id="closeAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes" />
+        <property name="StockId">gtk-close</property>
+        <property name="Tooltip" translatable="yes">delete Row</property>
+        <signal name="Activated" handler="RemoveSelectedRows" />
+      </action>
+      <action id="applyHeader">
+        <property name="Type">Toggle</property>
+        <property name="Label" translatable="yes">First Row is Header</property>
+        <property name="ShortLabel" translatable="yes">First Row is Header</property>
+        <property name="StockId">gtk-apply</property>
+        <property name="Tooltip" translatable="yes">First Row is Header on Open
+Save Header on Save</property>
+        <property name="DrawAsRadio">True</property>
+        <property name="Active">False</property>
+        <signal name="Activated" handler="onChangeIcon" />
+      </action>
+      <action id="addAction1">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes" />
+        <property name="StockId">gtk-add</property>
+        <property name="Tooltip" translatable="yes">add Row</property>
+        <signal name="Activated" handler="onAddRow" />
+      </action>
+      <action id="copyAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes" />
+        <property name="StockId">gtk-copy</property>
+        <property name="Tooltip" translatable="yes">copy selected Row</property>
+        <signal name="Activated" handler="onCopyRow" />
+      </action>
+      <action id="pasteAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes" />
+        <property name="StockId">gtk-paste</property>
+        <property name="Tooltip" translatable="yes">paste Row on Selection</property>
+        <signal name="Activated" handler="onPasteRow" />
+      </action>
+      <action id="cutAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes" />
+        <property name="StockId">gtk-cut</property>
+        <signal name="Activated" handler="onCutRow" />
+      </action>
+      <action id="addAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes" />
+        <property name="StockId">gtk-add</property>
+        <property name="Tooltip" translatable="yes">add Column</property>
+        <signal name="Activated" handler="onAddColumn" />
+      </action>
+      <action id="harddiskAction1">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes" />
+        <property name="StockId">gtk-harddisk</property>
+        <property name="Tooltip" translatable="yes">Save to new File</property>
+        <signal name="Activated" handler="onSaveAs" />
+      </action>
+      <action id="harddiskAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes" />
+        <property name="StockId">gtk-harddisk</property>
+        <property name="Tooltip" translatable="yes">Test Button</property>
+        <signal name="Activated" handler="onTest" />
+      </action>
+      <action id="selectFontAction">
+        <property name="Type">Toggle</property>
+        <property name="Label" translatable="yes" />
+        <property name="StockId">gtk-select-font</property>
+        <property name="Tooltip" translatable="yes">Text-Size toggle 12 &lt;-&gt; 14</property>
+        <property name="DrawAsRadio">False</property>
+        <property name="Active">False</property>
+        <signal name="Activated" handler="onChangeFont" />
+      </action>
+      <action id="justifyCenterAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes" />
+        <property name="StockId">gtk-justify-center</property>
+        <property name="Tooltip" translatable="yes">Column align center</property>
+        <signal name="Activated" handler="onCenter" />
+      </action>
+      <action id="justifyLeftAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes" />
+        <property name="StockId">gtk-justify-left</property>
+        <property name="Tooltip" translatable="yes">Column align left</property>
+        <signal name="Activated" handler="onLeft" />
+      </action>
+      <action id="justifyRightAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes" />
+        <property name="StockId">gtk-justify-right</property>
+        <property name="Tooltip" translatable="yes">Column align right</property>
+        <signal name="Activated" handler="onRight" />
+      </action>
+      <action id="dialogInfoAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes" />
+        <property name="StockId">gtk-dialog-info</property>
+        <property name="Tooltip" translatable="yes">about</property>
+        <signal name="Activated" handler="onInfo" />
+      </action>
+      <action id="preferencesAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes" />
+        <property name="StockId">gtk-preferences</property>
+        <signal name="Activated" handler="onTest" />
+      </action>
+      <action id="printAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes" />
+        <property name="StockId">gtk-print</property>
+        <signal name="Activated" handler="onPrinting" />
+      </action>
+      <action id="FileAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">File</property>
+        <property name="ShortLabel" translatable="yes">File</property>
+      </action>
+      <action id="openAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Open</property>
+        <property name="ShortLabel" translatable="yes">Open</property>
+        <property name="StockId">gtk-open</property>
+        <signal name="Activated" handler="onOpenFile" />
+      </action>
+      <action id="saveAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Save</property>
+        <property name="ShortLabel" translatable="yes">Save</property>
+        <property name="StockId">gtk-save</property>
+        <signal name="Activated" handler="OnSaveFile" />
+      </action>
+      <action id="saveAsAction1">
+        <property name="Type">Action</property>
+        <property name="Accelerator">&lt;Primary&gt;&lt;Alt&gt;s</property>
+        <property name="Label" translatable="yes">Save as ...</property>
+        <property name="ShortLabel" translatable="yes">Save as ...</property>
+        <property name="StockId">gtk-save-as</property>
+        <signal name="Activated" handler="onSaveAs" />
+      </action>
+      <action id="Action">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">-</property>
+        <property name="ShortLabel" translatable="yes">-</property>
+      </action>
+      <action id="printAction1">
+        <property name="Type">Action</property>
+        <property name="Accelerator">&lt;Primary&gt;p</property>
+        <property name="Label" translatable="yes">Print</property>
+        <property name="ShortLabel" translatable="yes">Print</property>
+        <property name="StockId">gtk-print</property>
+        <signal name="Activated" handler="onPrinting" />
+      </action>
+      <action id="Action1">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">-</property>
+        <property name="ShortLabel" translatable="yes">-</property>
+      </action>
+      <action id="quitAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Exit</property>
+        <property name="ShortLabel" translatable="yes">Exit</property>
+        <property name="StockId">gtk-quit</property>
+        <signal name="Activated" handler="onQuit" />
+      </action>
+      <action id="EditAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Edit</property>
+        <property name="ShortLabel" translatable="yes">Edit</property>
+      </action>
+      <action id="copyAction1">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Copy Row</property>
+        <property name="ShortLabel" translatable="yes">Copy</property>
+        <property name="StockId">gtk-copy</property>
+        <signal name="Activated" handler="onCopyRow" />
+      </action>
+      <action id="pasteAction1">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Paste Row</property>
+        <property name="ShortLabel" translatable="yes">Paste</property>
+        <property name="StockId">gtk-paste</property>
+        <signal name="Activated" handler="onPasteRow" />
+      </action>
+      <action id="noAction">
+        <property name="Type">Action</property>
+        <property name="Accelerator">&lt;Primary&gt;x</property>
+        <property name="Label" translatable="yes">Cut Row</property>
+        <property name="ShortLabel" translatable="yes">Cut</property>
+        <property name="StockId">gtk-no</property>
+        <signal name="Activated" handler="onCutRow" />
+      </action>
+      <action id="Action2">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">-</property>
+        <property name="ShortLabel" translatable="yes">-</property>
+      </action>
+      <action id="removeAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">delete Row</property>
+        <property name="ShortLabel" translatable="yes">delete Row</property>
+        <property name="StockId">gtk-remove</property>
+        <signal name="Activated" handler="RemoveSelectedRows" />
+      </action>
+      <action id="removeAction1">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">delete selected Column</property>
+        <property name="ShortLabel" translatable="yes">delete selected Column</property>
+        <property name="StockId">gtk-remove</property>
+        <signal name="Activated" handler="onRemoveSelColumn" />
+      </action>
+      <action id="deleteAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">delete last Column</property>
+        <property name="ShortLabel" translatable="yes">delete last Column</property>
+        <property name="StockId">gtk-delete</property>
+        <signal name="Activated" handler="onRemoveLastColumn" />
+      </action>
+      <action id="addAction2">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">add Row</property>
+        <property name="ShortLabel" translatable="yes">add Row</property>
+        <property name="StockId">gtk-add</property>
+        <signal name="Activated" handler="onAddRow" />
+      </action>
+      <action id="newAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">add Column</property>
+        <property name="ShortLabel" translatable="yes">add Column</property>
+        <property name="StockId">gtk-new</property>
+        <signal name="Activated" handler="onAddColumn" />
+      </action>
+      <action id="okAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">first Row as Header</property>
+        <property name="ShortLabel" translatable="yes">first Row as Header</property>
+        <property name="StockId">gtk-ok</property>
+        <signal name="Activated" handler="onMakeFirstRowHeader" />
+      </action>
+      <action id="TextsizeAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Textsize</property>
+        <property name="ShortLabel" translatable="yes">Textsize</property>
+      </action>
+      <action id="nine_Action">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">9</property>
+        <property name="ShortLabel" translatable="yes">9</property>
+        <signal name="Activated" handler="onSize_nine" />
+      </action>
+      <action id="ten_Action">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">10</property>
+        <property name="ShortLabel" translatable="yes">10</property>
+        <signal name="Activated" handler="onSize_ten" />
+      </action>
+      <action id="eleven_Action">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">11</property>
+        <property name="ShortLabel" translatable="yes">11</property>
+        <signal name="Activated" handler="onSize_eleven" />
+      </action>
+      <action id="twelve_Action">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">12</property>
+        <property name="ShortLabel" translatable="yes">12</property>
+        <signal name="Activated" handler="onSize_twelve" />
+      </action>
+      <action id="thirteen_Action">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">13</property>
+        <property name="ShortLabel" translatable="yes">13</property>
+        <signal name="Activated" handler="onSize_thirteen" />
+      </action>
+      <action id="fourteen_Action">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">14</property>
+        <property name="ShortLabel" translatable="yes">14</property>
+        <signal name="Activated" handler="onSize_fourteen" />
+      </action>
+      <action id="eighteen_Action">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">18</property>
+        <property name="ShortLabel" translatable="yes">18</property>
+        <signal name="Activated" handler="onSize_eighteen" />
+      </action>
+      <action id="ViewAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">View</property>
+        <property name="ShortLabel" translatable="yes">View</property>
+      </action>
+      <action id="propertiesAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">show / hide Toolbar</property>
+        <property name="ShortLabel" translatable="yes">show / hide Toolbar</property>
+        <property name="StockId">gtk-properties</property>
+        <signal name="Activated" handler="onHideToolbar" />
+      </action>
+      <action id="dndAction">
+        <property name="Type">Action</property>
+        <property name="Accelerator">&lt;Primary&gt;n</property>
+        <property name="Label" translatable="yes">New</property>
+        <property name="ShortLabel" translatable="yes">New</property>
+        <property name="StockId">gtk-dnd</property>
+        <signal name="Activated" handler="NewFile" />
+      </action>
+      <action id="RecentFilesAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Recent Files</property>
+        <property name="ShortLabel" translatable="yes">Recent Files</property>
+      </action>
+      <action id="clearAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">clear Listbox</property>
+        <property name="ShortLabel" translatable="yes">clear Listbox</property>
+        <property name="StockId">gtk-clear</property>
+        <signal name="Activated" handler="onClearListbox" />
+      </action>
+      <action id="dialogInfoAction1">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Info</property>
+        <property name="ShortLabel" translatable="yes">Info</property>
+        <property name="StockId">gtk-dialog-info</property>
+        <signal name="Activated" handler="onInfo" />
+      </action>
+    </action-group>
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">MainWindow</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <signal name="DeleteEvent" handler="OnDeleteEvent" />
+    <child>
+      <widget class="Gtk.VBox" id="vbox1">
+        <property name="MemberName" />
+        <property name="Spacing">6</property>
+        <child>
+          <widget class="Gtk.MenuBar" id="menubar2">
+            <property name="MemberName" />
+            <node name="__gtksharp_156_Stetic_Editor_ActionMenuBar" type="Menubar">
+              <node type="Menu" action="FileAction">
+                <node type="Menuitem" action="dndAction" />
+                <node type="Menuitem" action="openAction" />
+                <node type="Menuitem" action="saveAction" />
+                <node type="Menuitem" action="saveAsAction1" />
+                <node type="Separator" />
+                <node type="Menuitem" action="printAction1" />
+                <node type="Separator" />
+                <node type="Menuitem" action="quitAction" />
+              </node>
+              <node type="Menu" action="EditAction">
+                <node type="Menuitem" action="copyAction1" />
+                <node type="Menuitem" action="pasteAction1" />
+                <node type="Menuitem" action="noAction" />
+                <node type="Separator" />
+                <node type="Menuitem" action="okAction" />
+                <node type="Separator" />
+                <node type="Menuitem" action="addAction2" />
+                <node type="Menuitem" action="newAction" />
+                <node type="Separator" />
+                <node type="Menuitem" action="removeAction" />
+                <node type="Menuitem" action="removeAction1" />
+                <node type="Menuitem" action="deleteAction" />
+                <node type="Separator" />
+                <node type="Menuitem" action="clearAction" />
+              </node>
+              <node type="Menu" action="TextsizeAction">
+                <node type="Menuitem" action="nine_Action" />
+                <node type="Menuitem" action="ten_Action" />
+                <node type="Menuitem" action="eleven_Action" />
+                <node type="Menuitem" action="twelve_Action" />
+                <node type="Menuitem" action="thirteen_Action" />
+                <node type="Menuitem" action="fourteen_Action" />
+                <node type="Menuitem" action="eighteen_Action" />
+              </node>
+              <node type="Menu" action="ViewAction">
+                <node type="Menuitem" action="propertiesAction" />
+                <node type="Menuitem" action="dialogInfoAction1" />
+              </node>
+            </node>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Toolbar" id="toolbar1">
+            <property name="MemberName" />
+            <property name="ShowArrow">False</property>
+            <property name="ButtonStyle">Icons</property>
+            <property name="IconSize">SmallToolbar</property>
+            <node name="toolbar1" type="Toolbar">
+              <node type="Toolitem" action="dndAction1" />
+              <node type="Toolitem" action="btnOpenFile" />
+              <node type="Toolitem" action="btnSaveAction" />
+              <node type="Toolitem" action="harddiskAction1" />
+              <node type="Separator" />
+              <node type="Toolitem" action="applyHeader" />
+              <node type="Separator" />
+              <node type="Toolitem" action="closeAction" />
+              <node type="Toolitem" action="addAction1" />
+              <node type="Toolitem" action="addAction" />
+              <node type="Separator" />
+              <node type="Toolitem" action="copyAction" />
+              <node type="Toolitem" action="pasteAction" />
+              <node type="Toolitem" action="cutAction" />
+              <node type="Separator" />
+              <node type="Toolitem" action="justifyLeftAction" />
+              <node type="Toolitem" action="justifyCenterAction" />
+              <node type="Toolitem" action="justifyRightAction" />
+              <node type="Separator" />
+              <node type="Toolitem" action="dialogInfoAction" />
+              <node type="Separator" />
+              <node type="Toolitem" action="printAction" />
+            </node>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+            <property name="Padding">2</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+            <property name="MemberName" />
+            <property name="ShadowType">EtchedIn</property>
+            <property name="BorderWidth">10</property>
+            <child>
+              <widget class="Gtk.NodeView" id="lb">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="ShowScrollbars">True</property>
+                <property name="Reorderable">True</property>
+                <property name="RulesHint">True</property>
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">2</property>
+            <property name="AutoSize">True</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+</stetic-interface>
